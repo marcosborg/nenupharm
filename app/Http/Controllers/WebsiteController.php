@@ -10,11 +10,11 @@ class WebsiteController extends Controller
 {
     public function index()
     {
-
         if (session('language')) {
             $language = session('language');
         } elseif (config('panel.primary_language')) {
             $language = config('panel.primary_language');
+            session()->put('language', $language);
         }
 
         if (isset($language)) {
