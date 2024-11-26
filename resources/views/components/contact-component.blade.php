@@ -4,11 +4,11 @@
     <div class="container">
         <div class="contact-items">
             <div class="row">
-
                 <div class="col-lg-8 left-item">
                     <div class="content">
                         <h2>Contact our <strong>Support Office</strong></h2>
-                        <form action="/website/assets/mail/contact.php" method="POST" class="contact-form">
+                        <form action="/contact-form" method="POST" class="contact-form">
+                            @csrf
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="form-group">
@@ -44,10 +44,6 @@
                                         Send Message <i class="fa fa-paper-plane"></i>
                                     </button>
                                 </div>
-                            </div>
-                            <!-- Alert Message -->
-                            <div class="col-lg-12 alert-notification">
-                                <div id="message" class="alert-msg"></div>
                             </div>
                         </form>
                     </div>

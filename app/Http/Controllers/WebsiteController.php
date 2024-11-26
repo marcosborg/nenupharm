@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Contact;
 use App\Models\Navigation;
+use App\Models\User;
+use App\Notifications\ContactForm;
 use Illuminate\Http\Request;
 
 class WebsiteController extends Controller
@@ -36,5 +38,11 @@ class WebsiteController extends Controller
     {
         session()->put('language', $lang);
         return redirect()->back();
+    }
+
+    public function contactForm(Request $request)
+    {
+        return (new ContactForm($request))
+            ->toMail(User::find(1));
     }
 }

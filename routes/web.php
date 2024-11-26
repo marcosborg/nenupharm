@@ -1,14 +1,13 @@
 <?php
 
 Route::get('/', 'WebsiteController@index');
-
-ROute::get('/change-language/{lang}', 'WebsiteController@changeLanguage');
+Route::post('/contact-form', 'WebsiteController@contactForm');
+Route::get('/change-language/{lang}', 'WebsiteController@changeLanguage');
 
 Route::get('/home', function () {
     if (session('status')) {
         return redirect()->route('admin.home')->with('status', session('status'));
     }
-
     return redirect()->route('admin.home');
 });
 
